@@ -12,8 +12,8 @@ load_dotenv()
 Google_API_KEY = os.getenv("GOOGLE_API_KEY")
 # ---- LOGO SETUP ----
 # Use your actual file paths or URLs for logos
-client_logo_path = "logos\pri_logo.png"  # Replace with your client logo filename
-pri_logo_path = "logos\schneider_logo.png"  # Replace with your company logo filename
+client_logo_path = "logos/pri_logo.png"  # Replace with your client logo filename
+pri_logo_path = "logos/schneider_logo.png"  # Replace with your company logo filename
 
 # ---- PAGE LAYOUT ----
 st.set_page_config(
