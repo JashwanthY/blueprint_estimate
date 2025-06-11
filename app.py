@@ -3,11 +3,17 @@ from google import genai
 from google.genai import types
 from pathlib import Path
 from PIL import Image
+import os
 
+from dotenv import load_dotenv
+
+load_dotenv() 
+
+Google_API_KEY = os.getenv("GOOGLE_API_KEY")
 # ---- LOGO SETUP ----
 # Use your actual file paths or URLs for logos
-client_logo_path = "logos/pri_logo.png"
-pri_logo_path = "logos/schneider_logo.png"
+client_logo_path = "logos\pri_logo.png"  # Replace with your client logo filename
+pri_logo_path = "logos\schneider_logo.png"  # Replace with your company logo filename
 
 # ---- PAGE LAYOUT ----
 st.set_page_config(
@@ -110,7 +116,7 @@ if run_button:
             try:
                 full_prompt = prompt_template.format(user_prompt=user_prompt)
                 response = genai.Client(
-                    api_key="AIzaSyCksM0sqO0uGO-7XHfGPG8cfeEMo_ElPUM"
+                    api_key=Google_API_KEY
                 ).models.generate_content(
                     model="gemini-2.5-pro-preview-06-05",
                     contents=[
